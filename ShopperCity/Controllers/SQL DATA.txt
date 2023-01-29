@@ -1,0 +1,35 @@
+﻿create database shoppercity
+go 
+use shoppercity
+go
+CREATE TABLE Customers (
+  CustomerId INT PRIMARY KEY ,
+  CustomerName VARCHAR(50) NOT NULL,
+  
+);
+go
+INSERT INTO Customers VALUES (1,'SHIV'),(2,'GAURAV'),(3,'ROHIT')
+go
+SELECT * FROM Customers
+go
+CREATE TABLE Products (
+  ProductId INT PRIMARY KEY,
+  ProductName VARCHAR(50) NOT NULL,
+  Price DECIMAL(10,2) NOT NULL
+);
+go
+INSERT INTO Products VALUES (1,'SHIRT',1000),(2,'T-SHIRT',500),(3,'MOBILE',10000)
+go
+SELECT * FROM Products
+go
+CREATE TABLE Orders (
+  OrderId INT PRIMARY KEY ,
+  CustomerId INT NOT NULL,
+  ProductId INT NOT NULL,
+  Quantity INT NOT NULL,
+  Total INT NOT NULL
+  FOREIGN KEY (CustomerId) REFERENCES Customers(CustomerId),
+  FOREIGN KEY (ProductId) REFERENCES Products(ProductId)
+);
+go
+SELECT * FROM Orders
