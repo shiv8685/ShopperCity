@@ -28,8 +28,8 @@ CREATE TABLE Orders (
   ProductId INT NOT NULL,
   Quantity INT NOT NULL,
   Total INT NOT NULL
-  FOREIGN KEY (CustomerId) REFERENCES Customers(CustomerId),
-  FOREIGN KEY (ProductId) REFERENCES Products(ProductId)
+  FOREIGN KEY (CustomerId) REFERENCES Customers(CustomerId) ON DELETE CASCADE,
+  FOREIGN KEY (ProductId) REFERENCES Products(ProductId) ON DELETE CASCADE
 );
 go
 SELECT * FROM Orders
