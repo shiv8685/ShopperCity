@@ -9,7 +9,7 @@
           <Key>
             <PropertyRef Name="CustomerId" />
           </Key>
-          <Property Name="CustomerId" Type="int" Nullable="false" />
+          <Property Name="CustomerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CustomerName" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Orders">
